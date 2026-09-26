@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master's Portfolio | Corvinus University of Budapest</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <!--   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">  -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        corvinus: {
+                            // Official Corvinus Brand Colors (Specified Palette)
+                            lightPink: '#DDDDDD', //lightPink: '#FFDEDE',
+                            warmRed: '#0ACD5A', //      warmRed: '#FF4132',
+                            burgundy: '#002300',  //burgundy: '#410500',
+                            lightGreen: '#E1FFD9',
+                            vibrantGreen: '#0ACD5A',
+                            darkGreen: '#002300',
+                            
+                            // Contextual Mappings
+                            navy: '#002300',  // navy: '#410500', // Deep burgundy primary header/accent
+                            gold: '#EEEEEE',// gold: '#FF4132', // Vibrant brand accent
+                            slateBg: '#FAF9F6'
+                        }
+                    },
+//                    fontFamily: {
+//                        sans: ['Inter', 'sans-serif'],
+//                        serif: ['Playfair Display', 'serif']
+//                    }
+fontFamily: {
+    sans: ['"Source Sans 3"', 'sans-serif'],
+    serif: ['"Source Serif 4"', 'serif']
+}
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom tree lines and scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #410500;
+            border-radius: 4px;
+        }
+        /* Custom badges using brand green & warm red/pink palette */
+        .badge-1yr {
+            background-color: #E1FFD9;
+            color: #002300;
+            border: 1px solid #0ACD5A;
+        }
+        .badge-2yr {
+            background-color: #FFDEDE;
+            color: #410500;
+            border: 1px solid #FF4132;
+        }
+        .card-1yr-accent {
+            border-left: 4px solid #0ACD5A !important;
+        }
+        .card-2yr-accent {
+            border-left: 4px solid #410500 !important;
+        }
+    </style>
+</head>
+<body class="bg-corvinus-slateBg text-slate-800 font-sans antialiased min-h-screen flex flex-col selection:bg-corvinus-warmRed selection:text-white">
+
+
+    <!-- Top University Bar -->
+    <header class="bg-corvinus-burgundy text-white sticky top-0 z-40 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo & Title -->
+                <div class="flex items-center gap-4 cursor-pointer" onclick="resetAllFilters()">
+                    <div class="w-12 h-12 rounded bg-corvinus-warmRed flex items-center justify-center font-serif text-white font-bold text-2xl shadow-inner border border-red-300">
+                        C
+                    </div>
+                    <div>
+                        <div class="text-xs tracking-widest text-corvinus-lightPink font-semibold uppercase">Corvinus University of Budapest</div>
+                        <div class="text-lg sm:text-xl font-bold font-serif tracking-tight text-white flex items-center gap-2">
+                            Master's Portfolio
+                            <span class="text-xs font-sans font-normal px-2 py-0.5 rounded bg-white/10 text-corvinus-lightPink border border-white/20 hidden sm:inline-block">Starts in 2027 Fall </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side Quick Info & Lang Switcher -->
+                <div class="flex items-center gap-4">
+                    <div class="hidden md:flex items-center gap-2 text-xs text-corvinus-lightPink bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
+                        <span class="w-2.5 h-2.5 rounded-full bg-corvinus-vibrantGreen animate-pulse"></span>
+                        <span>Intake Open for Applications</span>
+                    </div>
+                    
+                    <a href="https://www.uni-corvinus.hu" target="_blank" rel="noopener" class="text-xs text-corvinus-lightPink hover:text-white transition font-medium hidden sm:inline-block">
+                        uni-corvinus.hu &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Color Accent Stripe using Palette -->
+        <div class="h-1.5 bg-gradient-to-r from-corvinus-warmRed via-corvinus-lightPink to-corvinus-vibrantGreen"></div>
+    </header>
+
+    <!-- Hero Banner & Introductory Section -->
+    <section class="bg-gradient-to-b from-corvinus-burgundy to-corvinus-darkGreen text-white pt-10 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="max-w-3xl">
+                <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-corvinus-warmRed/30 text-corvinus-lightPink border border-corvinus-warmRed/40 mb-4">
+                    Academic Excellence & Innovation
+                </span>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white tracking-tight leading-tight">
+                    Shape the Future of Business, Governance & Society
+                </h1>
+                <p class="mt-4 text-base sm:text-lg text-slate-200 leading-relaxed font-light">
+                    Explore Corvinus University's modular 1-Year Intensive and 2-Year Master's degree programmes across 9 key fields. Discover linked specialized tracks and multi-disciplinary pathways tailored to your ambitions.
+                </p>
+            </div>
+
+            <!-- Key Metrics Summary Bar -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-8 border-t border-white/10 text-center sm:text-left">
+                <div class="bg-white/5 rounded-lg p-3 border border-white/10 backdrop-blur-xs">
+                    <div class="text-2xl font-bold font-serif text-corvinus-lightPink" id="stat-total">35</div>
+                    <div class="text-xs text-slate-300">Total Programmes</div>
+                </div>
+                <div class="bg-white/5 rounded-lg p-3 border border-white/10 backdrop-blur-xs">
+                    <div class="text-2xl font-bold font-serif text-corvinus-vibrantGreen" id="stat-1yr">20</div>
+                    <div class="text-xs text-slate-300">1-Year Intensive Tracks</div>
+                </div>
+                <div class="bg-white/5 rounded-lg p-3 border border-white/10 backdrop-blur-xs">
+                    <div class="text-2xl font-bold font-serif text-corvinus-lightPink" id="stat-2yr">15</div>
+                    <div class="text-xs text-slate-300">2-Year Full Degrees</div>
+                </div>
+                <div class="bg-white/5 rounded-lg p-3 border border-white/10 backdrop-blur-xs">
+                    <div class="text-2xl font-bold font-serif text-emerald-300" id="stat-english">31</div>
+                    <div class="text-xs text-slate-300">Taught in English (EN)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Filter & Search Control Panel -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-30">
+        <div class="bg-white rounded-xl shadow-xl border border-slate-200/80 p-4 sm:p-6">
+            <div class="flex flex-col lg:flex-row gap-4 items-stretch lg:items-center justify-between">
+                
+                <!-- Search Box -->
+                <div class="relative flex-1">
+                    <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </div>
+                    <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Search programmes by name, keyword, skill, or field..." class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-corvinus-navy focus:border-corvinus-navy text-sm placeholder-slate-400 transition">
+                </div>
+
+                <!-- Filter Controls Container -->
+                <div class="flex flex-wrap items-center gap-3">
+                    
+                    <!-- Language Filter -->
+                    <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-medium">
+                        <span class="px-2 text-slate-500 font-semibold uppercase text-[10px] hidden sm:inline">Lang:</span>
+                        <button onclick="setLanguageFilter('ALL')" id="lang-btn-ALL" class="lang-btn px-2.5 py-1.5 rounded-md transition text-slate-600 hover:text-corvinus-navy">All</button>
+                        <button onclick="setLanguageFilter('EN')" id="lang-btn-EN" class="lang-btn px-2.5 py-1.5 rounded-md transition font-semibold bg-white text-corvinus-navy shadow-xs">🇬🇧 EN</button>
+                        <button onclick="setLanguageFilter('HU')" id="lang-btn-HU" class="lang-btn px-2.5 py-1.5 rounded-md transition text-slate-600 hover:text-corvinus-navy">🇭🇺 HU</button>
+                    </div>
+
+                    <!-- Duration Filter -->
+                    <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-medium">
+                        <span class="px-2 text-slate-500 font-semibold uppercase text-[10px] hidden sm:inline">Duration:</span>
+                        <button onclick="setDurationFilter('ALL')" id="dur-btn-ALL" class="dur-btn px-2.5 py-1.5 rounded-md transition font-semibold bg-white text-corvinus-burgundy shadow-xs">All</button>
+                        <button onclick="setDurationFilter(1)" id="dur-btn-1" class="dur-btn px-2.5 py-1.5 rounded-md transition text-corvinus-darkGreen hover:bg-emerald-100/50">⚡ 1 Year</button>
+                        <button onclick="setDurationFilter(2)" id="dur-btn-2" class="dur-btn px-2.5 py-1.5 rounded-md transition text-corvinus-burgundy hover:bg-red-100/50">🎓 2 Years</button>
+                    </div>
+
+                    <!-- Reset Filters Button -->
+                    <button onclick="resetAllFilters()" class="px-3 py-2 rounded-lg border border-slate-300 text-xs font-medium text-slate-600 hover:bg-slate-50 hover:text-corvinus-burgundy transition flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                        <span>Reset</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Active Filters & Matched Counter Bar -->
+            <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
+                <div class="flex items-center gap-2">
+                    <span>Showing <strong id="matchedCount" class="text-corvinus-burgundy font-bold">35</strong> degree options</span>
+                    <span id="activeFilterTags" class="flex flex-wrap gap-1"></span>
+                </div>
+                <div class="flex items-center gap-4 text-slate-500">
+                    <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-corvinus-vibrantGreen inline-block"></span> 1-Year Programme</span>
+                    <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-corvinus-burgundy inline-block"></span> 2-Year Programme</span>
+                    <span class="flex items-center gap-1"><span class="text-xs font-semibold text-indigo-600">↔</span> Dual Field</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area: 8 Field Tiles Grid -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <div id="noResultsMsg" class="hidden text-center py-16 bg-white rounded-xl border border-slate-200 shadow-sm my-6">
+            <div class="text-4xl mb-3">🔍</div>
+            <h3 class="text-lg font-bold text-slate-800">No matching programmes found</h3>
+            <p class="text-sm text-slate-500 max-w-md mx-auto mt-1">Try adjusting your search terms or clearing your language and duration filters.</p>
+            <button onclick="resetAllFilters()" class="mt-4 px-4 py-2 bg-corvinus-navy text-white text-xs font-semibold rounded-lg hover:bg-corvinus-dark transition">
+                Clear All Filters
+            </button>
+        </div>
+
+        <!-- 8 Fields Grid -->
+        <div id="fieldsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Tiles rendered dynamically via JavaScript -->
+        </div>
+    </main>
+
+    <!-- Modal for Programme Detailed View -->
+    <div id="programmeModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6 transition-opacity">
+        <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 max-w-2xl w-full overflow-hidden transform transition-all my-8 relative">
+            
+            <!-- Modal Header -->
+            <div id="modalHeaderBg" class="bg-corvinus-navy text-white p-6 relative">
+                <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-lg transition">
+                    &times;
+                </button>
+                <div class="flex flex-wrap items-center gap-2 mb-2" id="modalBadges">
+                    <!-- Badges populated dynamically -->
+                </div>
+                <h2 id="modalTitle" class="text-2xl sm:text-3xl font-serif font-bold text-white leading-tight">
+                    Programme Name
+                </h2>
+                <div id="modalSubtitle" class="text-xs text-corvinus-gold font-medium mt-1">
+                    Corvinus Master's Degree
+                </div>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div class="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
+                
+                <!-- Overview & Description -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Programme Overview</h4>
+                    <p id="modalDescription" class="text-sm text-slate-700 leading-relaxed">
+                        Description text goes here.
+                    </p>
+                </div>
+
+                <!-- Academic Structure & Parent/Child Hierarchy -->
+                <div class="bg-slate-50 rounded-xl p-4 border border-slate-200/80 space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Academic Hierarchy & Field Association</h4>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                        <div>
+                            <span class="text-slate-400 block font-medium">Primary Field:</span>
+                            <span id="modalField1" class="font-bold text-corvinus-navy">Field 1</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 block font-medium">Secondary Field:</span>
+                            <span id="modalField2" class="font-bold text-slate-700">None</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 block font-medium">Parent Track:</span>
+                            <span id="modalParent" class="font-bold text-slate-700">None (Standalone Degree)</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 block font-medium">Instruction Language:</span>
+                            <span id="modalLang" class="font-bold text-slate-700">English (EN)</span>
+                        </div>
+                    </div>
+
+                    <!-- Linked Child Specializations -->
+                    <div id="modalChildrenContainer" class="hidden pt-3 border-t border-slate-200">
+                        <span class="text-xs font-bold text-slate-700 block mb-2">Linked 1-Year Specialization Branches under this Programme:</span>
+                        <div id="modalChildrenList" class="space-y-1.5 pl-2">
+                            <!-- Child links added dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Skills & Competencies -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Key Competencies & Modules</h4>
+                    <div id="modalSkills" class="flex flex-wrap gap-2">
+                        <!-- Skills added dynamically -->
+                    </div>
+                </div>
+
+                <!-- Career Outcomes -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Target Career Paths</h4>
+                    <p id="modalCareer" class="text-xs text-slate-700 font-medium">
+                        Career pathways text.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Modal Footer Action Bar -->
+            <div class="bg-slate-50 px-6 py-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <span class="text-xs text-slate-500">Applications open for 2025/26 Academic Year</span>
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                    <button onclick="closeModal()" class="w-full sm:w-auto px-4 py-2 border border-slate-300 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 transition">
+                        Close
+                    </button>
+                    <a href="https://www.uni-corvinus.hu/" target="_blank" class="w-full sm:w-auto text-center px-4 py-2 bg-corvinus-navy hover:bg-corvinus-dark text-white rounded-lg text-xs font-bold transition shadow-sm">
+                        Apply at Corvinus Portal &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- University Footer -->
+    <footer class="bg-corvinus-navy text-white mt-16 border-t-4 border-corvinus-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded bg-corvinus-gold flex items-center justify-center font-serif text-corvinus-navy font-bold text-lg">C</div>
+                        <span class="font-serif font-bold text-lg tracking-tight">CORVINUS UNIVERSITY OF BUDAPEST</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed font-light">
+                        Hungary's leading university in business, economics, and social sciences. Empowering global leaders through research-driven, accredited Master's programmes.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-corvinus-gold mb-3">Fields</h4>
+                    <ul class="text-xs text-slate-300 space-y-1.5">                     
+                        <li>• Management </li>
+                        <li>• Entrepreneurship & Innovation</li>
+                        <li>• Marketing & Communication</li>
+                        <li>• Data Science, Tech & AI</li>
+                        <li>• Finance, Accounting & Quantitative Economics</li>
+                        <li>• International Affairs & Business</li>
+                        <li>• Public Policy & Politics"</li>
+                        <li>• Society & Behavior</li>
+                        <li>• Sustainability</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-corvinus-gold mb-3">Admissions & Contact</h4>
+                    <p class="text-xs text-slate-300 mb-2">Main Campus: Fővám tér 8, 1093 Budapest, Hungary</p>
+                    <p class="text-xs text-slate-300 mb-4">DreamApply: https://corvinus-university.dreamapply.com/</p>
+                    <div class="text-[11px] text-slate-400">
+                        &copy; 2026 Corvinus University of Budapest. All rights reserved. Portfolio Interactive Visualization.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // UPDATED 9-FIELD MASTER CATEGORY LIST
+        const FIELD_NAMES = [
+            "Management",
+            "Entrepreneurship & Innovation",
+            "Marketing & Communication",
+            "Data, Technology & AI",
+            "Finance, Accounting & Quantitative Economics",
+            "International Affairs & Business",
+            "Public Policy & Politics",
+            "Society & Behavior",
+            "Sustainability"
+        ];
+
+        // REVISED PROGRAMME DATASET ACCORDING TO REVISED TABLE SPECIFICATION
+        const PROGRAMMES = [
+            // Entrepreneurship & Innovation
+            {
+                id: "prog-1",
+                name: "Innovation and Entrepreneurship",
+                duration: 2,
+                language: "English",
+                langCode: "EN",
+                parent: null,
+                field1: "Entrepreneurship & Innovation",
+                field2: null,
+                description: "Equips founders, corporate innovators, and venture catalysts with cutting-edge capabilities to design, launch, and scale modern economic ventures.",
+                skills: ["Venture Building", "Corporate Innovation", "Agile Mindset", "Market Entry Strategies"],
+                career: "Venture Builder, Innovation Manager, Startup Founder, Innovation Consultant"
+            },
+            {
+                id: "prog-2",
+                name: "Agile Entrepreneurship",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: "Innovation and Entrepreneurship",
+                field1: "Entrepreneurship & Innovation",
+                field2: null,
+                description: "An intensive 1-year master track focusing on rapid lean business validation, scrum leadership, and agile product development.",
+                skills: ["Scrum & Kanban", "Lean Startup Validation", "MVP Prototyping", "Rapid Scaling"],
+                career: "Agile Coach, Product Owner, Startup Lead, Innovation Specialist"
+            },
+            {
+                id: "prog-3",
+                name: "Design, Business, Society",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: "Innovation and Entrepreneurship",
+                field1: "Entrepreneurship & Innovation",
+                field2: "Marketing & Communication",
+                description: "Combines strategic design thinking with commercial viability and social impact assessment to transform modern user ecosystems.",
+                skills: ["Design Thinking", "User Experience Strategy", "Social Impact Assessment", "Brand Systems"],
+                career: "Strategic Designer, Innovation Strategist, UX Strategist, Creative Lead"
+            },
+            {
+                id: "prog-4",
+                name: "Digital Innovation",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: "Innovation and Entrepreneurship",
+                field1: "Entrepreneurship & Innovation",
+                field2: "Data, Technology & AI",
+                description: "Focuses on leveraging software platforms, cloud infrastructure, and AI-driven business models to disrupt traditional market sectors.",
+                skills: ["Platform Business Strategy", "Digital Transformation", "Tech Entrepreneurship", "AI Product Management"],
+                career: "Digital Transformation Lead, Tech Founder, Product Manager, Digital Business Architect"
+            },
+            {
+                id: "prog-5",
+                name: "Sustainability Management and Entrepreneurship",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: "Innovation and Entrepreneurship",
+                field1: "Entrepreneurship & Innovation",
+                field2: "Sustainability",
+                description: "Combines circular economy frameworks, green technology ventures, and ESG compliance with active entrepreneurship.",
+                skills: ["ESG Frameworks", "Circular Economy Models", "Green Venture Strategy", "Sustainable Finance"],
+                career: "Chief Sustainability Officer, ESG Venture Specialist, Green Business Consultant"
+            },
+            {
+                id: "prog-6",
+                name: "Intellectual Property Management",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: "Innovation and Entrepreneurship",
+                field1: "Entrepreneurship & Innovation",
+                field2: null,
+                description: "Master the valuation, commercialization, patent strategy, and legal licensing of technological and creative innovations.",
+                skills: ["Patent Strategy", "IP Commercialization", "Tech Transfer", "Valuation of Intangibles"],
+                career: "IP Manager, Technology Transfer Specialist, Innovation Patent Consultant"
+            },
+            {
+                id: "prog-7",
+                name: "Business Development",
+                duration: 2,
+                language: "Hungarian",
+                langCode: "HU",
+                parent: null,
+                field1: "Entrepreneurship & Innovation",
+                field2: null,
+                description: "Comprehensive Hungarian-taught Master's focusing on enterprise scaling, corporate expansion strategies, and strategic partnerships.",
+                skills: ["Corporate Strategy", "Market Expansion", "B2B Negotiations", "Enterprise Growth"],
+                career: "Head of Business Development, Expansion Director, Growth Strategist"
+            },
+
+            // Management
+            {
+                id: "prog-8",
+                name: "Management and Leadership",
+                duration: 2,
+                language: "English",
+                langCode: "EN",
+                parent: null,
+                field1: "Management",
+                field2: null,
+                description: "Corvinus' flagship executive leadership program preparing high-potential leaders for executive boardrooms and multinational organizations.",
+                skills: ["Executive Leadership", "Organizational Behavior", "Strategic Management", "Change Management"],
+                career: "Executive Director, Operations Manager, Management Consultant, Regional Lead"
+            },
+  {
+                id: "prog-36",
+                name: "Management and Leadership",
+                duration: 2,
+                language: "Hungarian",
+                langCode: "HU",
+                parent: null,
+                field1: "Management",
+                field2: null,
+                description: "Corvinus' flagship executive leadership program preparing high-potential leaders for executive boardrooms and multinational organizations.",
+                skills: ["Executive Leadership", "Organizational Behavior", "Strategic Management", "Change Management"],
+                career: "Executive Director, Operations Manager, Management Consultant, Regional Lead"
+            },
+            {
+                id: "prog-9",
+                name: "Management",
+                duration: 2,
+                language: "English",
+                langCode: "EN",
+                parent: null,
+                field1: "Management",
+                field2: null,
+                description: "An intensive 1-year foundational program designed for rapid career acceleration across global corporate operational frameworks.",
+                skills: ["Operational Excellence", "Business Strategy", "Decision Analysis", "Team Dynamics"],
+                career: "Management Analyst, Project Manager, Corporate Strategist, Operations Specialist"
+            },
+            {
+                id: "prog-10",
+                name: "Advanced Supply Chain Management",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: "Management",
+                field1: "Management",
+                field2: null,
+                description: "Specialized focus on global logistics networks, resilient supply chains, predictive procurement, and smart distribution.",
+                skills: ["Supply Chain Analytics", "Logistics Optimization", "Procurement Strategy", "Global Operations"],
+                career: "Supply Chain Manager, Logistics Director, Sourcing Manager, Operations Analyst"
+            },
+            {
+                id: "prog-11",
+                name: "Strategic Project Management",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: "Management",
+                field1: "Management",
+                field2: null,
+                description: "Advanced methodologies for leading complex cross-functional initiatives, risk assessment, and strategic portfolio alignment.",
+                skills: ["Agile & Waterfall PM", "Portfolio Management", "Risk Mitigation", "Stakeholder Leadership"],
+                career: "Senior Project Manager, PMO Lead, Program Director, Strategy Execution Specialist"
+            },
+            {
+                id: "prog-12",
+                name: "International Sport Business",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: "Management",
+                field1: "Management",
+                field2: null,
+                description: "Bridges executive management principles with the international sports industry, mega-event operations, and sports marketing.",
+                skills: ["Sports Marketing", "Event Operations", "Sponsorship Valuation", "Club & Franchise Management"],
+                career: "Sports League Executive, Major Event Manager, Sports Marketing Director"
+            },
+            {
+                id: "prog-13",
+                name: "International Accounting and Auditing",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: "Management",
+                field1: "Management",
+                field2: "Finance, Accounting & Quantitative Economics",
+                description: "Prepares students for Big 4 audit standards, international financial reporting frameworks (IFRS), and forensic accounting.",
+                skills: ["IFRS Compliance", "Financial Audit", "Internal Control Systems", "Corporate Accounting"],
+                career: "Senior Auditor, Financial Controller, Risk & Compliance Manager, Forensic Accountant"
+            },
+            {
+                id: "prog-14",
+                name: "AI in Business",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: "Management",
+                field1: "Management",
+                field2: "Data, Technology & AI",
+                description: "Equips modern managers to implement machine learning solutions, process automation, and ethical AI strategies across corporate functions.",
+                skills: ["AI Strategy", "Machine Learning Business Models", "Data-Driven Leadership", "AI Ethics & Governance"],
+                career: "AI Transformation Lead, Chief AI Officer, Tech Strategist, AI Business Consultant"
+            },
+
+            // Marketing & Communication
+            {
+                id: "prog-15",
+                name: "Marketing",
+                duration: 2,
+                language: "English",
+                langCode: "EN",
+                parent: null,
+                field1: "Marketing & Communication",
+                field2: null,
+                description: "Comprehensive marketing management exploring brand equity, consumer behavior, omni-channel campaigns, and market analysis.",
+                skills: ["Brand Strategy", "Consumer Research", "Omnichannel Marketing", "Market Positioning"],
+                career: "Brand Manager, Marketing Director, Consumer Insights Manager, Marketing Lead"
+            },
+            {
+                id: "prog-16",
+                name: "Marketing Strategy and Innovation",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: "Marketing",
+                field1: "Marketing & Communication",
+                field2: null,
+                description: "Focuses on rapid digital marketing innovations, growth hacking models, customer journey optimization, and viral engagement.",
+                skills: ["Growth Hacking", "Digital Marketing Analytics", "Customer Journey Optimization", "Content Strategy"],
+                career: "Growth Marketing Lead, Digital Marketing Director, Performance Strategist"
+            },
+            {
+                id: "prog-17",
+                name: "Communication and Media Studies",
+                duration: 2,
+                language: "English",
+                langCode: "EN",
+                parent: null,
+                field1: "Marketing & Communication",
+                field2: null,
+                description: "In-depth study of international media dynamics, corporate public relations, crisis management, and strategic digital messaging.",
+                skills: ["Crisis Communication", "Public Relations Strategy", "Media Analytics", "Corporate Messaging"],
+                career: "Head of Communications, PR Director, Strategic Media Consultant, Corporate Spokesperson"
+            },
+
+            // Data, Technology & AI
+            {
+                id: "prog-18",
+                name: "Business Informatics",
+                duration: 2,
+                language: "English",
+                langCode: "EN",
+                parent: null,
+                field1: "Data, Technology & AI",
+                field2: null,
+                description: "Combines computer science and enterprise systems design, cloud architecture, database management, and business intelligence.",
+                skills: ["Enterprise Systems (ERP)", "Business Intelligence", "Cloud Architecture", "Database Systems"],
+                career: "IT Director, Enterprise Architect, Systems Analyst, IT Transformation Consultant"
+            },
+            {
+                id: "prog-19",
+                name: "Social Data Science",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: null,
+                field1: "Data, Technology & AI",
+                field2: "Society & Behavior",
+                description: "Utilizes Python, network science, NLP, and computational analytics to decipher complex social behaviors and public trends.",
+                skills: ["Python Data Analysis", "NLP & Network Science", "Predictive Analytics", "Computational Methods"],
+                career: "Data Scientist, Quantitative Researcher, People Analytics Specialist, Policy Data Analyst"
+            },
+
+            // Finance, Accounting & Quantitative Economics
+            {
+                id: "prog-20",
+                name: "Finance",
+                duration: 2,
+                language: "English",
+                langCode: "EN",
+                parent: null,
+                field1: "Finance, Accounting & Quantitative Economics",
+                field2: null,
+                description: "Advanced financial economics, corporate valuation, quantitative portfolio modeling, and Fintech disruption.",
+                skills: ["Financial Engineering", "Corporate Valuation", "Quantitative Portfolio Management", "Fintech Strategy"],
+                career: "Financial Quantitative Analyst, Investment Manager, Treasury Lead, Risk Specialist"
+            },
+            {
+                id: "prog-21",
+                name: "Actuarial and Financial Mathematics",
+                duration: 2,
+                language: "Hungarian",
+                langCode: "HU",
+                parent: null,
+                field1: "Finance, Accounting & Quantitative Economics",
+                field2: null,
+                description: "Rigorous Hungarian-taught program for risk modeling, insurance mathematics, stochastic processes, and financial derivative pricing.",
+                skills: ["Stochastic Modeling", "Actuarial Mathematics", "Risk Quantitation", "Derivatives Pricing"],
+                career: "Actuary, Quantitative Risk Manager, Reinsurance Specialist, Financial Modeler"
+            },
+            {
+                id: "prog-22",
+                name: "Economic and Financial Mathematical Analysis",
+                duration: 2,
+                language: "Hungarian",
+                langCode: "HU",
+                parent: null,
+                field1: "Finance, Accounting & Quantitative Economics",
+                field2: null,
+                description: "Elite Hungarian quantitative program training macro-financial modelers, central bank economists, and financial mathematicians.",
+                skills: ["Advanced Econometrics", "Macro-Financial Modeling", "Dynamic General Equilibrium", "Mathematical Economics"],
+                career: "Central Bank Economist, Quant Strategist, Economic Researcher, Quantitative Analyst"
+            },
+            {
+                id: "prog-23",
+                name: "Economic Analysis",
+                duration: 2,
+                language: "English",
+                langCode: "EN",
+                parent: null,
+                field1: "Finance, Accounting & Quantitative Economics",
+                field2: null,
+                description: "Advanced theoretical and empirical economic analysis focusing on micro, macro, microeconometrics, and policy design.",
+                skills: ["Micro & Macro Theory", "Empirical Econometrics", "Impact Evaluation", "Data-Driven Policy"],
+                career: "Policy Economist, Economic Advisor, Research Fellow, Strategy Consultant"
+            },
+
+            // International Affairs & Business
+            {
+                id: "prog-24",
+                name: "International Economy and Business",
+                duration: 2,
+                language: "English",
+                langCode: "EN",
+                parent: null,
+                field1: "International Affairs & Business",
+                field2: "Society, Politics & Economy",
+                description: "Analyzes international trade flows, multinational firm strategies, global value chains, and geoeconomic dynamics.",
+                skills: ["Global Trade Policy", "Multinational Business Strategy", "Geoeconomics", "Foreign Direct Investment"],
+                career: "Global Trade Lead, International Business Manager, Geopolitical Advisor, MNC Director"
+            },
+            {
+                id: "prog-25",
+                name: "International Relations",
+                duration: 2,
+                language: "English",
+                langCode: "EN",
+                parent: null,
+                field1: "International Affairs & Business",
+                field2: null,
+                description: "Comprehensive study of global governance, diplomatic negotiations, foreign policy, and international security structures.",
+                skills: ["Diplomatic Negotiation", "Foreign Policy Analysis", "Global Governance", "Multilateral Diplomacy"],
+                career: "Diplomat, International Affairs Officer, Foreign Policy Analyst, NGO Executive"
+            },
+
+            // Public Policy & Politics / Sustainability
+            {
+                id: "prog-26",
+                name: "Political Economy",
+                duration: 2,
+                language: "English",
+                langCode: "EN",
+                parent: null,
+                field1: "Public Policy & Politics",
+                field2: null,
+                description: "Examines the interplay of political institutions, state economic policies, wealth distribution, and global capitalist models.",
+                skills: ["Institutional Economics", "Political Risk Analysis", "Comparative Political Economy", "Public Economics"],
+                career: "Political Risk Analyst, Regulatory Affairs Manager, Policy Think Tank Fellow"
+            },
+            {
+                id: "prog-27",
+                name: "Sustainable Transition Energy",
+                duration: 2,
+                language: "English",
+                langCode: "EN",
+                parent: null,
+                field1: "Sustainability",
+                field2: null,
+                description: "Interdisciplinary training on energy market decarbonization, renewable energy economics, and climate policy implementation.",
+                skills: ["Energy Market Economics", "Decarbonization Policy", "Renewable Infrastructure", "Carbon Market Trading"],
+                career: "Energy Transition Manager, Sustainability Policy Advisor, Carbon Market Analyst"
+            },
+            {
+                id: "prog-28",
+                name: "Public Policy and Management",
+                duration: 2,
+                language: "English",
+                langCode: "EN",
+                parent: null,
+                field1: "Public Policy & Politics",
+                field2: null,
+                description: "Core executive leadership degree for public administrative reform, civic innovation, governance, and public sector budgeting.",
+                skills: ["Public Governance", "Policy Design & Evaluation", "Public Financial Management", "Administrative Reform"],
+                career: "Public Administrator, Policy Director, Government Relations Lead, Public Sector Consultant"
+            },
+            {
+                id: "prog-29",
+                name: "Public Governance",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: "Public Policy and Management",
+                field1: "Public Policy & Politics",
+                field2: null,
+                description: "Intensive 1-year track focusing on digital government implementation, open data, transparent public institutions, and civic engagement.",
+                skills: ["E-Governance", "Public Transparency", "Civic Tech Strategy", "Administrative Digitalization"],
+                career: "E-Government Specialist, Digital Policy Advisor, Civic Innovation Officer"
+            },
+            {
+                id: "prog-30",
+                name: "Climate Policy and Regional Development",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: "Public Policy and Management",
+                field1: "Public Policy & Politics",
+                field2: "Sustainability",
+                description: "Focuses on EU climate targets, urban climate resilience, regional economic cohesion funds, and environmental zoning.",
+                skills: ["Climate Resilience Planning", "EU Cohesion Policy", "Regional Development", "Environmental Economics"],
+                career: "Regional Development Officer, Climate Policy Specialist, EU Project Manager"
+            },
+            {
+                id: "prog-31",
+                name: "Global Development Policy",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: "Public Policy and Management",
+                field1: "Public Policy & Politics",
+                field2: "International Affairs & Business",
+                description: "Focuses on international development assistance, multilateral aid strategy, poverty reduction programs, and emerging markets.",
+                skills: ["Development Economics", "Multilateral Aid Strategy", "Project Impact Assessment", "Global Health Policy"],
+                career: "Development Bank Specialist, International Aid Director, NGO Program Lead"
+            },
+            {
+                id: "prog-32",
+                name: "Health Economic Evaluation",
+                duration: 1,
+                language: "English",
+                langCode: "EN",
+                parent: "Public Policy and Management",
+                field1: "Public Policy & Politics",
+                field2: null,
+                description: "Quantitative health economics, health technology assessment (HTA), pharmaceutical market access, and healthcare funding.",
+                skills: ["Health Technology Assessment", "Cost-Effectiveness Modeling", "Pharma Pricing Policy", "Healthcare Economics"],
+                career: "Health Economist, HTA Analyst, Market Access Manager, Health Policy Consultant"
+            },
+
+            // Society & Behavior
+            {
+                id: "prog-33",
+                name: "Economic Behavior Analysis",
+                duration: 2,
+                language: "English",
+                langCode: "EN",
+                parent: null,
+                field1: "Society & Behavior",
+                field2: "null",
+                description: "Applies behavioral economics, experimental design, cognitive psychology, and decision sciences to corporate and public issues.",
+                skills: ["Behavioral Nudging", "Experimental Economics", "Cognitive Psychology", "Consumer Decision Analysis"],
+                career: "Behavioral Insights Strategist, Nudge Unit Director, UX Behavioral Researcher"
+            },
+            {
+                id: "prog-34",
+                name: "Social Wicked Problems",
+                duration: 2,
+                language: "English",
+                langCode: "EN",
+                parent: "None",
+                field1: "Society & Behavior",
+                field2: null,
+                description: "Interdisciplinary Master's tackling complex systemic challenges such as economic inequality, climate migration, and tech ethics.",
+                skills: ["Systems Thinking", "Wicked Problem Architecture", "Interdisciplinary Synthesis", "Social Innovation"],
+                career: "Social Innovation Lead, Think Tank Researcher, Strategic Policy Consultant"
+            },
+            {
+                id: "prog-35",
+                name: "Teacher of Economics (Entrepreneurial Studies)",
+                duration: 1,
+                language: "Hungarian",
+                langCode: "HU",
+                parent: null,
+                field1: "Society & Behavior",
+                field2: null,
+                description: "Hungarian-taught specialized pedagogy Master's preparing educators to teach economic and entrepreneurial curriculum in secondary and vocational education.",
+                skills: ["Economics Pedagogy", "Entrepreneurship Didactics", "Curriculum Design", "Educational Technology"],
+                career: "Economics Educator, Vocational Training Lead, Curriculum Developer"
+            }
+        ];
+
+        // STATE MANAGEMENT
+        let currentLangFilter = 'EN'; // ALL, EN, HU
+        let currentDurationFilter = 'ALL'; // ALL, 1, 2
+        let currentSearchQuery = '';
+
+        // INIT ON WINDOW LOAD
+        window.onload = function() {
+            calculateStats();
+            renderFieldsGrid();
+        };
+
+        function calculateStats() {
+            document.getElementById('stat-total').innerText = PROGRAMMES.length;
+            document.getElementById('stat-1yr').innerText = PROGRAMMES.filter(p => p.duration === 1).length;
+            document.getElementById('stat-2yr').innerText = PROGRAMMES.filter(p => p.duration === 2).length;
+            document.getElementById('stat-english').innerText = PROGRAMMES.filter(p => p.langCode === 'EN').length;
+        }
+
+        function setLanguageFilter(lang) {
+            currentLangFilter = lang;
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('bg-white', 'text-corvinus-navy', 'shadow-xs', 'font-semibold');
+                btn.classList.add('text-slate-600');
+            });
+            const activeBtn = document.getElementById(`lang-btn-${lang}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-white', 'text-corvinus-navy', 'shadow-xs', 'font-semibold');
+                activeBtn.classList.remove('text-slate-600');
+            }
+            renderFieldsGrid();
+        }
+
+        function setDurationFilter(dur) {
+            currentDurationFilter = dur;
+            document.querySelectorAll('.dur-btn').forEach(btn => {
+                btn.classList.remove('bg-white', 'text-corvinus-navy', 'shadow-xs', 'font-semibold');
+                btn.classList.add('text-slate-600');
+            });
+            const activeBtn = document.getElementById(`dur-btn-${dur}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-white', 'text-corvinus-navy', 'shadow-xs', 'font-semibold');
+                activeBtn.classList.remove('text-slate-600');
+            }
+            renderFieldsGrid();
+        }
+
+        function handleSearch() {
+            currentSearchQuery = document.getElementById('searchInput').value.toLowerCase().trim();
+            renderFieldsGrid();
+        }
+
+        function resetAllFilters() {
+            currentLangFilter = 'ALL';
+            currentDurationFilter = 'ALL';
+            currentSearchQuery = '';
+            document.getElementById('searchInput').value = '';
+            
+            setLanguageFilter('EN');
+            setDurationFilter('ALL');
+        }
+
+        // Helper to check if programme matches active filters
+        function matchesFilters(prog) {
+            // Language Filter
+            if (currentLangFilter !== 'ALL' && prog.langCode !== currentLangFilter) {
+                return false;
+            }
+            // Duration Filter
+            if (currentDurationFilter !== 'ALL' && prog.duration !== parseInt(currentDurationFilter)) {
+                return false;
+            }
+            // Search Query
+            if (currentSearchQuery !== '') {
+                const searchStr = `${prog.name} ${prog.field1} ${prog.field2 || ''} ${prog.description} ${prog.skills.join(' ')}`.toLowerCase();
+                if (!searchStr.includes(currentSearchQuery)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function renderFieldsGrid() {
+            const gridContainer = document.getElementById('fieldsGrid');
+            gridContainer.innerHTML = '';
+
+            let totalMatchedCount = 0;
+            let activeFieldsCount = 0;
+
+            FIELD_NAMES.forEach((fieldName, index) => {
+                // Find all programmes belonging to this field (Field 1 or Field 2)
+                const fieldProgrammes = PROGRAMMES.filter(p => {
+                    const isMember = (p.field1 === fieldName || p.field2 === fieldName);
+                    return isMember && matchesFilters(p);
+                });
+
+                if (fieldProgrammes.length > 0) {
+                    activeFieldsCount++;
+                    totalMatchedCount += fieldProgrammes.length;
+
+                    // Build Tile HTML
+                    const tileElem = document.createElement('div');
+                    tileElem.className = "bg-white rounded-xl shadow-sm border border-slate-200/90 overflow-hidden flex flex-col hover:shadow-md transition duration-200";
+
+                    // Tile Header
+                    const headerHtml = `
+                        <div class="px-5 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-corvinus-navy/10 text-corvinus-navy flex items-center justify-center font-bold text-sm">
+                                    0${index + 1}
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-base text-slate-900 font-serif leading-tight">${fieldName}</h3>
+                                    <span class="text-[11px] text-slate-500">${fieldProgrammes.length} degree ${fieldProgrammes.length === 1 ? 'option' : 'options'}</span>
+                                </div>
+                            </div>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-corvinus-navy text-white font-semibold">
+                                Field ${index + 1}
+                            </span>
+                        </div>
+                    `;
+
+                    // Process Root and Child Hierarchy inside this field
+                    // Root programmes in this field: where parent is null OR parent is NOT in this field
+                    const rootProgs = fieldProgrammes.filter(p => p.parent === null);
+                    
+                    // Child programmes that belong to a parent present in this dataset
+                    const childProgs = fieldProgrammes.filter(p => p.parent !== null);
+
+                    let listHtml = `<div class="p-4 flex-1 space-y-3">`;
+
+                    // Render Root Programmes
+                    rootProgs.forEach(rootProg => {
+                        listHtml += renderProgrammeCardHtml(rootProg, fieldName, false);
+
+                        // Find children of this root programme
+                        const children = childProgs.filter(c => c.parent === rootProg.name);
+                        if (children.length > 0) {
+                            listHtml += `<div class="ml-4 pl-4 border-l-2 border-amber-400/80 space-y-2 mt-2 relative">`;
+                            children.forEach(childProg => {
+                                listHtml += `<div class="relative">
+                                    <span class="absolute -left-4 top-3 text-amber-500 font-mono text-xs font-bold">└──</span>
+                                    ${renderProgrammeCardHtml(childProg, fieldName, true)}
+                                </div>`;
+                            });
+                            listHtml += `</div>`;
+                        }
+                    });
+
+                    // Render Orphaned Children (Children whose parent is in another field or filtered out)
+                    const renderedChildIds = fieldProgrammes.filter(p => p.parent !== null && rootProgs.some(r => r.name === p.parent)).map(p => p.id);
+                    const orphanChildren = childProgs.filter(c => !renderedChildIds.includes(c.id));
+
+                    if (orphanChildren.length > 0) {
+                        orphanChildren.forEach(orphan => {
+                            listHtml += renderProgrammeCardHtml(orphan, fieldName, false);
+                        });
+                    }
+
+                    listHtml += `</div>`;
+
+                    tileElem.innerHTML = headerHtml + listHtml;
+                    gridContainer.appendChild(tileElem);
+                }
+            });
+
+            // Update matched count indicator
+            document.getElementById('matchedCount').innerText = totalMatchedCount;
+
+            // Toggle No Results Message
+            const noResultsMsg = document.getElementById('noResultsMsg');
+            if (activeFieldsCount === 0) {
+                noResultsMsg.classList.remove('hidden');
+            } else {
+                noResultsMsg.classList.add('hidden');
+            }
+
+            // Render active filter tag indicators
+            renderActiveFilterTags();
+        }
+
+        function renderProgrammeCardHtml(prog, currentFieldName, isChild) {
+            const is1Yr = prog.duration === 1;
+            const isDual = prog.field2 !== null && prog.field2 !== "";
+            const isSecondaryInThisTile = (prog.field2 === currentFieldName);
+
+            // Badges logic
+            const durationBadge = is1Yr 
+                ? `<span class="badge-1yr px-2 py-0.5 rounded text-[11px] font-bold flex items-center gap-1 shadow-2xs"><span class="text-corvinus-vibrantGreen">⚡</span> 1 Year</span>`
+                : `<span class="badge-2yr px-2 py-0.5 rounded text-[11px] font-bold flex items-center gap-1"><span class="text-corvinus-burgundy">🎓</span> 2 Years</span>`;
+
+            const langBadge = prog.langCode === 'EN'
+                ? `<span class="px-1.5 py-0.5 rounded bg-slate-100 text-slate-700 font-semibold text-[10px] border border-slate-200">🇬🇧 EN</span>`
+                : `<span class="px-1.5 py-0.5 rounded bg-red-100 text-corvinus-burgundy font-semibold text-[10px] border border-red-200">🇭🇺 HU</span>`;
+
+            const dualBadge = isDual
+                ? `<span class="mt-1.5 inline-flex items-center gap-1 text-[10px] font-semibold text-indigo-800 bg-indigo-50 border border-indigo-200/80 px-2 py-0.5 rounded">
+                    ↔ See also: ${isSecondaryInThisTile ? prog.field1 : prog.field2}
+                   </span>`
+                : '';
+
+            // UPDATED LABEL: "Specialization under"
+            const parentInfoTag = (isChild && prog.parent) 
+                ? `<span class="text-[10px] text-corvinus-burgundy font-medium block">Specialization under: <strong>${prog.parent}</strong></span>`
+                : '';
+
+            const accentClass = is1Yr ? 'card-1yr-accent' : 'card-2yr-accent';
+
+            return `
+                <div onclick="openModal('${prog.id}')" 
+                     class="bg-white rounded-lg p-3 border border-slate-200 ${accentClass} hover:border-corvinus-warmRed hover:shadow-md transition cursor-pointer group relative">
+                    
+                    <div class="flex items-start justify-between gap-2">
+                        <div class="flex-1">
+                            ${parentInfoTag}
+                            <h4 class="font-bold text-slate-900 group-hover:text-corvinus-burgundy text-sm leading-snug transition">
+                                ${prog.name}
+                            </h4>
+                        </div>
+                        <div class="flex items-center gap-1 shrink-0">
+                            ${langBadge}
+                            ${durationBadge}
+                        </div>
+                    </div>
+
+                    ${dualBadge}
+                </div>
+            `;
+        }
+
+        function renderActiveFilterTags() {
+            const container = document.getElementById('activeFilterTags');
+            container.innerHTML = '';
+
+            if (currentLangFilter !== 'ALL') {
+                container.innerHTML += `<span class="px-2 py-0.5 rounded bg-slate-200 text-slate-700 text-[10px] font-semibold">Lang: ${currentLangFilter}</span>`;
+            }
+            if (currentDurationFilter !== 'ALL') {
+                container.innerHTML += `<span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-semibold">${currentDurationFilter} Year(s)</span>`;
+            }
+            if (currentSearchQuery !== '') {
+                container.innerHTML += `<span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-semibold">Query: "${currentSearchQuery}"</span>`;
+            }
+        }
+
+        function openModal(progId) {
+            const prog = PROGRAMMES.find(p => p.id === progId);
+            if (!prog) return;
+
+            document.getElementById('modalTitle').innerText = prog.name;
+            document.getElementById('modalDescription').innerText = prog.description;
+            document.getElementById('modalField1').innerText = prog.field1;
+            document.getElementById('modalField2').innerText = prog.field2 ? prog.field2 : "None";
+            document.getElementById('modalParent').innerText = prog.parent ? prog.parent : "None (Root Degree)";
+            document.getElementById('modalLang').innerText = `${prog.language} (${prog.langCode})`;
+            document.getElementById('modalCareer').innerText = prog.career;
+
+            // Render Skills Badges
+            const skillsContainer = document.getElementById('modalSkills');
+            skillsContainer.innerHTML = prog.skills.map(skill => 
+                `<span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200 text-xs font-medium">${skill}</span>`
+            ).join('');
+
+            // Render Badges in Modal Header
+            const modalBadges = document.getElementById('modalBadges');
+            const is1Yr = prog.duration === 1;
+            modalBadges.innerHTML = `
+                <span class="${is1Yr ? 'bg-amber-400 text-slate-900' : 'bg-corvinus-gold text-corvinus-navy'} px-2.5 py-0.5 rounded text-xs font-bold uppercase tracking-wider">
+                    ${prog.duration} Year Master's Degree
+                </span>
+                <span class="bg-white/20 text-white px-2 py-0.5 rounded text-xs font-semibold">
+                    ${prog.langCode === 'EN' ? '🇬🇧 English' : '🇭🇺 Hungarian'}
+                </span>
+                ${prog.field2 ? '<span class="bg-indigo-500/30 text-indigo-200 border border-indigo-400/30 px-2 py-0.5 rounded text-xs font-medium">↔ Multi-Disciplinary</span>' : ''}
+            `;
+
+            // Check if this programme has children
+            const children = PROGRAMMES.filter(p => p.parent === prog.name);
+            const childrenContainer = document.getElementById('modalChildrenContainer');
+            const childrenList = document.getElementById('modalChildrenList');
+
+            if (children.length > 0) {
+                childrenContainer.classList.remove('hidden');
+                childrenList.innerHTML = children.map(child => `
+                    <div onclick="openModal('${child.id}')" class="p-2 bg-white rounded border border-slate-200 flex items-center justify-between cursor-pointer hover:border-amber-400 transition">
+                        <span class="text-xs font-bold text-slate-800">${child.name}</span>
+                        <span class="badge-1yr px-2 py-0.5 rounded text-[10px] font-bold">1 Year (${child.langCode})</span>
+                    </div>
+                `).join('');
+            } else {
+                childrenContainer.classList.add('hidden');
+            }
+
+            // Show Modal
+            document.getElementById('programmeModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('programmeModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>
